@@ -4,6 +4,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerMiddleware } from './moddlewares/logger.middleware';
 import { UsersModule } from './users/users.module';
+import { ChannelsModule } from './channels/channels.module';
+import { DmsModule } from './dms/dms.module';
+import { WorkspacesModule } from './workspaces/workspaces.module';
 
 // 이런 형태의 사용 가능
 // const getEnv = () => {
@@ -16,7 +19,7 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   // imports: [ConfigModule.forRoot({ isGlobal: true, load: [getEnv] })],
-  imports: [ConfigModule.forRoot({ isGlobal: true }), UsersModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), UsersModule, ChannelsModule, DmsModule, WorkspacesModule],
   controllers: [AppController],
   providers: [AppService, ConfigService],
 })
